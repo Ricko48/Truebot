@@ -67,7 +67,7 @@ def recognize_message(message, id):
     for i in message:
         for j in hello:
             if i == j:
-                return 'Nazdar' + person(id)
+                return 'Nazdar' + type(id)
 
 
 
