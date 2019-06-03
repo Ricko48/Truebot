@@ -57,6 +57,7 @@ def person(id):
         return 'Džubyno'
     elif id == 'Richard Ondrejka':
         return 'Rišo'
+    return 'kamosko'
 
 def recognize_message(message, id):
     message = message.lower()
@@ -66,7 +67,7 @@ def recognize_message(message, id):
     for i in message:
         for j in hello:
             if i == j:
-                return person(id)
+                return 'Nazdar' + person(id)
 
 
 
