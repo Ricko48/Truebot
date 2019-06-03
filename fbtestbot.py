@@ -52,22 +52,35 @@ def strip(content):
         content = content.strip(i)
     return content.split(" ")
 
-def person(id):
-    if id == 'Roman Vereš':
-        return 'Džubyno'
-    elif id == 'Richard Ondrejka':
-        return 'Rišo'
-    return 'kamosko'
+
 
 def recognize_message(message, id):
     message = message.lower()
     hello = ['hello', 'helo', 'ahoj', 'aho', 'servas', 'servus', 'sevas', 'nazdar', 'nandar', 'cau', 'cauko']
     doing = ['robis', 'robiš', 'robís', 'robíš', 'porabas', 'porábaš', 'porábas', 'porabaš']
+    areu = ['máš', 'mas', 'darí', 'más', 'maš', 'dari']
+    kto = ['kto', 'Kto']
     message = strip(message)
     for i in message:
         for j in hello:
             if i == j:
-                return 'Nazdar' + string(type(id))
+                return 'Nazdar pickech'
+        for j in areu:
+            if i == j:
+                return 'a pohodke sa mam'
+        for j in doing:
+            if i == j:
+                return 'aale, odpisujem retardom ktory nemaju realnych kamaratov'
+        for j in kto:
+            if i == j:
+                return 'ja som Truebot naprogramovaný Richardom Ondrejkom'
+    
+    return 'Prepáč ale nerozumiem ti.....momentálne som vo vývoji takže moje odpovede niekedy nemusia byť moc kvalitné'
+    
+    
+    
+    
+    
 
 
 
