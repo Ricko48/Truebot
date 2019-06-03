@@ -64,7 +64,7 @@ def recognize_message(message, id):
     for i in message:
         for j in hello:
             if i == j:
-                return 'Nazdar pickech'
+                return 'Nazdar'
         for j in areu:
             if i == j:
                 return 'a pohodke sa mam'
