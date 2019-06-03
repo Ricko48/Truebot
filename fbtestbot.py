@@ -70,7 +70,7 @@ def recognize_message(message, id):
                 return 'a pohodke sa mam'
         for j in doing:
             if i == j:
-                return 'aale, odpisujem retardom ktory nemaju realnych kamaratov'
+                return 'aale, odpisujem ti'
         for j in kto:
             if i == j:
                 return 'ja som Truebot naprogramovaný Richardom Ondrejkom'
