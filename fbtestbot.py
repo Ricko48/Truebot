@@ -75,7 +75,7 @@ def recognize_message(message, id):
             if i == j:
                 return 'ja som Truebot naprogramovaný Richardom Ondrejkom'
     
-    return 'Prepáč ale nerozumiem ti.....momentálne som vo vývoji takže moje odpovede niekedy nemusia byť moc kvalitné'
+    return 'Prepáč ale nerozumiem ti.....momentálne som vo vývoji takže moje odpovede niekedy nemusia byť k veci'
     
     
     
