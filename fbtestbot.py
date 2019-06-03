@@ -5,6 +5,7 @@ import os
 import json
 from Credentials import *
 
+
 app = Flask(__name__)
 
 
@@ -31,7 +32,7 @@ def handle_messages():
                     recipient_id = messaging_event["recipient"]["id"]
                     message_text = messaging_event["message"]["text"]
 
-                    send_message(sender_id, message_text)
+                    send_message(sender_id, recognize_message(message_text, sender_id))
 
                 if messaging_event.get("delivery"):
                     pass
@@ -43,6 +44,31 @@ def handle_messages():
                     pass
 
     return "ok", 200
+
+def strip(content):
+    list_chars = ['.', ',', '?', '/', ';', '"', "'", '*', 'ˇ', '=', '-', '>', '<', ':', '"', "'", '|', ')', '(', '*',
+                  '&', '^', '%', '$', '#', '@', '`', '~', '{', '}', '[', ']', '!']
+    for i in list_chars:
+        content = content.strip(i)
+    return content.split(" ")
+
+def person(id):
+    if id == 'Roman Vereš':
+        return 'Džubyno'
+    elif id == 'Richard Ondrejka':
+        return 'Rišo'
+
+def recognize_message(message, id):
+    message = message.lower()
+    hello = ['hello', 'helo', 'ahoj', 'aho', 'servas', 'servus', 'sevas', 'nazdar', 'nandar', 'cau', 'cauko']
+    doing = ['robis', 'robiš', 'robís', 'robíš', 'porabas', 'porábaš', 'porábas', 'porabaš']
+    message = strip(message)
+    for i in message:
+        for j in hello:
+            if i == j:
+                return 'Nazdar' + person(id)
+
+
 
 
 def send_message(recipient_id, message_text):
